@@ -1,4 +1,3 @@
-// Your code here.
 function countBs(string) {
   return countChar(string, 'B');
 }
@@ -6,7 +5,7 @@ function countBs(string) {
 function countChar(string, letter) {
   let count = 0;
 
-  for (i = 0; i < string.length; i++) {
+  for (let i = 0; i < string.length; i++) {
     if (string[i] == letter) {
     	count++;
     }

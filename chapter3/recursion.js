@@ -1,4 +1,3 @@
-// Your code here.
 function isEven(num){
     if (num === 0){
         return (true);
