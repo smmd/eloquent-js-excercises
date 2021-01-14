@@ -1,0 +1,42 @@
+<!doctype html>
+
+<style>
+    .trail {
+        position: absolute;
+        height: 6px; width: 6px;
+        border-radius: 3px;
+        background: purple;
+    }
+    body {
+        height: 300px;
+    }
+</style>
+
+<body>
+    <script>
+      let tail = [];
+      let longitude = 0;
+
+      for (let i = 0; i < 10; i++) {
+        let node = document.createElement("div");
+
+        node.className = "trail";
+        document.body.appendChild(node);
+        tail.push(node);
+      }
+
+      window.addEventListener("mousemove", event => {
+        let state = tail[longitude];
+
+        state.style.left = (event.pageX - 3) + "px";
+        state.style.top = (event.pageY - 3) + "px";
+        longitude = (longitude + 1) % tail.length;
+      });
+
+      window.addEventListener("mouseout", event => {
+        if(event.pageX <= 0 || event.pageX <= 0) {
+          document.body.innerHTML = "";
+        }
+      });
+    </script>
+</body>
